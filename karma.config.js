@@ -14,9 +14,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/runner.js',
+      {pattern: 'bower_components/chai/chai.js', included: false},
       {pattern: 'src/**/*.js', included: false},
-      {pattern: 'test/**/*.test.js', included: false}
+      {pattern: 'test/**/*.test.js', included: false},
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'test/runner.js',
     ],
 
 

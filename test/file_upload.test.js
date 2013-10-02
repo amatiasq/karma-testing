@@ -1,6 +1,16 @@
-describe('File Upload directive', function() {
+define(function(require) {
+	var assert = require('chai').assert;
+	var sut = require('src/file_upload');
 
-	it('should do nothing', function() {
-		expect(1).toBe(false);
+	console.log(sut);
+
+	describe('File Upload directive', function() {
+
+		it('should do nothing', function() {
+			assert(true, 'tomaya!');
+		});
+		it('shoulda do nothing', function() {
+			assert(false, 'tomaya!');
+		});
 	});
 });

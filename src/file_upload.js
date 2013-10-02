@@ -1,7 +1,3 @@
-angular.module('file-upload')
-
-.directive('suiFileUpload', function() {
-
-
-
+define(function() {
+	return angular.module('file-upload', [])
 });

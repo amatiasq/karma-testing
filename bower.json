@@ -1,12 +1,11 @@
 {
   "name": "sui",
   "version": "0.0.1",
-
   "dependencies": {
-    "angular": "latest"
+    "angular": "~1.0"
   },
-
   "devDependencies": {
-    "angular-mocks": "latest"
+    "angular-mocks": "~1.0",
+    "chai": "~1.8",
   }
 }
