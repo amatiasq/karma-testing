@@ -13,7 +13,7 @@ define(function(require) {
 			mock.expects('back').once();
 
 			var link = $compile('<button sui-back>Back</button>');
-			var element = link($rootScope)[0];
+			var element = link($rootScope);
 			element.click();
 
 			mock.verify();

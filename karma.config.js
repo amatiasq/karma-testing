@@ -18,7 +18,7 @@ module.exports = function(config) {
       {pattern: 'lib/sinon-1.7.3.js', included: false},
       {pattern: 'src/**/*.js', included: false},
       {pattern: 'test/**/*.test.js', included: false},
-      'lib/jquery.min.js',
+      'lib/jquery-2.0.3.min.js',
       'bower_components/angular/angular.js',
       'lib/angular-mocks.js',
       'test/runner.js',
@@ -61,7 +61,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['Chrome','Firefox'],
 
 
     // If browser does not capture in given timeout [ms], kill it
