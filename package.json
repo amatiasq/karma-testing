@@ -1,0 +1,12 @@
+{
+  "name": "sui",
+  "version": "0.0.1",
+
+  "dependencies" : { },
+
+  "devDependencies": {
+  	"bower": "latest",
+    "karma": "latest",
+    "karma-mocha": "latest"
+  }
+}
