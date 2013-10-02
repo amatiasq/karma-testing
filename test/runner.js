@@ -1,17 +1,24 @@
 requirejs.config({
 	// This is because karma puts files under base/ directory
-	baseUrl: 'base/',
-	//urlArgs: Date.now(),
+	baseUrl: 'base/src/',
+
+	urlArgs: Date.now(),
 
 	paths: {
-		'chai': 'bower_components/chai/chai',
+		'chai': '../bower_components/chai/chai',
+		'sinon': '../lib/sinon-1.7.3',
+		'test': '../test',
+	},
+
+	shim: {
+		'sinon': { exports: 'sinon' }
 	}
 })
 
-console.log('b');
+angular.module('sui', []);
+
 require([
-	'test/file_upload.test'
+	'test/back.test'
 ], function() {
 	window.__karma__.start();
-	mocha.run();
 });
