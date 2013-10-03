@@ -1,13 +1,16 @@
 define(function(require) {
 	require('FileAPI');
 
-	// This module requires the value FileAPIFlashPath to be defined
+	// This module requires FileAPI.flashUrl to be defined
 
 	return angular.module('sui-file-upload', [])
 
-	.factory('suiFileUpload', function(FileAPIFlashPath, $q) {
-		FileAPI.flashUrl = FileAPIFlashPath;
+	.config(function() {
+		if (FileAPI.flashUrl === './FileAPI.flash.swf')
+			throw new Error('Please, provide the path to FileAPI.flash.swf at "FileAPI.flashUrl" in order to use "sui-file-upload"');
+	})
 
+	.factory('suiFileUpload', function($q) {
 		return function uploadFile(config) {
 			var defer = $q.defer();
 
@@ -32,9 +35,7 @@ define(function(require) {
 		};
 	})
 
-	.directive('suiFileSelector', function(FileAPIFlashPath) {
-		FileAPI.flashUrl = FileAPIFlashPath;
-
+	.directive('suiFileSelector', function() {
 		return {
 			scope: {
 				onfileselected: '&',

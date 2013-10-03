@@ -7,8 +7,9 @@ define(function(require) {
 	require('file_upload');
 
 	describe('File Upload module', function() {
-		angular.module('sui-file-upload')
-			.value('FileAPIFlashPath', '');
+
+		// sui-file-upload needs us to define FileAPI.flashUrl
+		FileAPI.flashUrl = '';
 
 		beforeEach(module('sui-file-upload'));
 
