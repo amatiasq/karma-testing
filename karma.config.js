@@ -18,7 +18,6 @@ module.exports = function(config) {
       {pattern: 'lib/sinon-1.7.3.js', included: false},
       {pattern: 'src/**/*.js', included: false},
       {pattern: 'test/**/*.test.js', included: false},
-      'lib/jquery-2.0.3.min.js',
       'bower_components/angular/angular.js',
       'lib/angular-mocks.js',
       'test/runner.js',

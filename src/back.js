@@ -4,8 +4,11 @@ define(function(require) {
 
 	.directive('suiBack', function($window) {
 		return function($scope, $element, attrs) {
-			$element.on('click', function(e) {
-				e.preventDefault();
+			// It can be a jQuery lite element
+			var el = $element[0]
+
+			el.addEventListener('click', function(event) {
+				event.preventDefault();
 				$window.history.back();
 			});
 		};
