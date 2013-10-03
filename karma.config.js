@@ -19,6 +19,7 @@ module.exports = function(config) {
 		files: [
 			{pattern: 'bower_components/chai/chai.js', included: false},
 			{pattern: 'lib/sinon-1.7.3.js', included: false},
+			{pattern: 'lib/FileAPI.min.js', included: false},
 			{pattern: 'src/**/*.js', included: false},
 			{pattern: 'test/**/*.test.js', included: false},
 			'bower_components/angular/angular.js',

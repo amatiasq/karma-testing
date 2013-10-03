@@ -11,6 +11,8 @@ requirejs.config({
 		'chai': '../bower_components/chai/chai',
 		'sinon': '../lib/sinon-1.7.3',
 		'test': '../test',
+
+		'FileAPI': '../lib/FileAPI.min',
 	},
 
 	shim: {
@@ -21,7 +23,8 @@ requirejs.config({
 angular.module('sui', []);
 
 requirejs([
-	'test/back.test'
+	'test/back.test',
+	'test/file_upload.test',
 ], function() {
 	window.__karma__.start();
 });
