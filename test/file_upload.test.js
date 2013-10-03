@@ -1,6 +1,8 @@
 define(function(require) {
-	var assert = require('chai').assert;
-	var sinon = require('sinon');
+	'use strict';
+
+	//var assert = require('chai').assert;
+	//var sinon = require('sinon');
 
 	// SUT
 	require('file_upload');
@@ -13,6 +15,6 @@ define(function(require) {
 			link($rootScope);
 
 			// TODO
-		});
+		}));
 	});
 });

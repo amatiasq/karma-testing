@@ -1,3 +1,6 @@
+//jshint camelcase:false
+'use strict';
+
 requirejs.config({
 	// This is because karma puts files under base/ directory
 	baseUrl: 'base/src/',
@@ -13,11 +16,11 @@ requirejs.config({
 	shim: {
 		'sinon': { exports: 'sinon' }
 	}
-})
+});
 
 angular.module('sui', []);
 
-require([
+requirejs([
 	'test/back.test'
 ], function() {
 	window.__karma__.start();

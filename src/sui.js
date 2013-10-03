@@ -1,4 +1,5 @@
-define(function() {
+define(function(require) {
+	'use strict';
 
 	require('back');
 	require('file_upload');

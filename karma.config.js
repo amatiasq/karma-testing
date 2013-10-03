@@ -1,74 +1,77 @@
+/*globals module*/
 // Karma configuration
 // Generated on Wed Oct 02 2013 11:59:43 GMT+0200 (CEST)
 
 module.exports = function(config) {
-  config.set({
+	'use strict';
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+	config.set({
 
-
-    // frameworks to use
-    frameworks: ['mocha', 'requirejs'],
+		// base path, that will be used to resolve files and exclude
+		basePath: '',
 
 
-    // list of files / patterns to load in the browser
-    files: [
-      {pattern: 'bower_components/chai/chai.js', included: false},
-      {pattern: 'lib/sinon-1.7.3.js', included: false},
-      {pattern: 'src/**/*.js', included: false},
-      {pattern: 'test/**/*.test.js', included: false},
-      'bower_components/angular/angular.js',
-      'lib/angular-mocks.js',
-      'test/runner.js',
-    ],
+		// frameworks to use
+		frameworks: ['mocha', 'requirejs'],
 
 
-    // list of files to exclude
-    exclude: [
-
-    ],
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
-
-
-    // web server port
-    port: 9876,
+		// list of files / patterns to load in the browser
+		files: [
+			{pattern: 'bower_components/chai/chai.js', included: false},
+			{pattern: 'lib/sinon-1.7.3.js', included: false},
+			{pattern: 'src/**/*.js', included: false},
+			{pattern: 'test/**/*.test.js', included: false},
+			'bower_components/angular/angular.js',
+			'lib/angular-mocks.js',
+			'test/runner.js',
+		],
 
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+		// list of files to exclude
+		exclude: [
+
+		],
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+		// test results reporter to use
+		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+		reporters: ['progress'],
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+		// web server port
+		port: 9876,
 
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome','Firefox'],
+		// enable / disable colors in the output (reporters and logs)
+		colors: true,
 
 
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
+		// level of logging
+		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+		logLevel: config.LOG_INFO,
 
 
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-  });
+		// enable / disable watching file and executing tests whenever any file changes
+		autoWatch: true,
+
+
+		// Start these browsers, currently available:
+		// - Chrome
+		// - ChromeCanary
+		// - Firefox
+		// - Opera
+		// - Safari (only Mac)
+		// - PhantomJS
+		// - IE (only Windows)
+		browsers: ['Chrome','Firefox'],
+
+
+		// If browser does not capture in given timeout [ms], kill it
+		captureTimeout: 60000,
+
+
+		// Continuous Integration mode
+		// if true, it capture browsers, run tests and exit
+		singleRun: false
+	});
 };

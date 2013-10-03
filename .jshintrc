@@ -85,6 +85,15 @@
 
 	// Custom Globals
 	"predef"        : [
-		"angular"
+		"define",
+		"requirejs",
+		"angular",
+
+		"beforeEach",
+		"afterEach",
+		"describe",
+		"it",
+		"module",
+		"inject"
 	]
 }

@@ -1,5 +1,6 @@
 define(function(require) {
-	var assert = require('chai').assert;
+	'use strict';
+
 	var sinon = require('sinon');
 
 	// SUT
@@ -13,7 +14,7 @@ define(function(require) {
 			mock.expects('back').once();
 
 			var link = $compile('<button sui-back>Back</button>');
-			var element = link($rootScope)[0]
+			var element = link($rootScope)[0];
 			element.click();
 
 			mock.verify();
