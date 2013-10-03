@@ -1,3 +1,11 @@
 define(function() {
-	return angular.module('sui', []);
+
+	require('back');
+	require('file_upload');
+
+	return angular.module('sui', [
+		'sui-back',
+		'sui-file-upload',
+	]);
+
 });

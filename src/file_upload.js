@@ -1,5 +1,5 @@
 define(function() {
-	return angular.module('file-upload', [])
+	return angular.module('sui-file-upload', [])
 
 	.directive('suiFileUpload', function() {
 		console.log('invocado');

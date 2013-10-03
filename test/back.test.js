@@ -6,7 +6,7 @@ define(function(require) {
 	require('back');
 
 	describe('Back directive', function() {
-		beforeEach(module('sui'));
+		beforeEach(module('sui-back'));
 
 		it('should invoke window back', inject(function($window, $compile, $rootScope) {
 			var mock = sinon.mock($window.history);

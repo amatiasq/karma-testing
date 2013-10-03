@@ -1,17 +1,18 @@
 define(function(require) {
-	require('file_upload');
 	var assert = require('chai').assert;
+	var sinon = require('sinon');
+
+	// SUT
+	require('file_upload');
 
 	describe('File Upload directive', function() {
-		beforeEach(module('file-upload'));
+		beforeEach(module('sui-file-upload'));
 
-		it('should do nothing', function() {
-			inject(function($compile, $rootScope) {
-				var element = $compile('<input type="file" x-sui-file-upload></input>');
-				var scope = {};
-				element(scope);
-				assert(true, 'tomaya!');
-			});
+		it('should do nothing', inject(function($compile, $rootScope) {
+			var link = $compile('<input type="file" x-sui-file-upload></input>');
+			link($rootScope);
+
+			// TODO
 		});
 	});
 });

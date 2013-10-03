@@ -1,5 +1,6 @@
 define(function(require) {
-	require('sui')
+
+	return angular.module('sui-back', [])
 
 	.directive('suiBack', function($window) {
 		return function($scope, $element, attrs) {
