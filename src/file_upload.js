@@ -7,7 +7,8 @@ define(function(require) {
 
 	.config(function() {
 		if (FileAPI.flashUrl === './FileAPI.flash.swf')
-			throw new Error('Please, provide the path to FileAPI.flash.swf at "FileAPI.flashUrl" in order to use "sui-file-upload"');
+			throw new Error('Please, provide the path to "FileAPI.flash.swf" at ' +
+				'"FileAPI.flashUrl" in order to use "sui-file-upload"');
 	})
 
 	.factory('suiFileUpload', function($q) {
@@ -25,7 +26,8 @@ define(function(require) {
 
 			if (config.file) {
 				if (config.files)
-					throw new Error('suiFileUpload accepts "file" OR "files" at configuration, it recived both');
+					throw new Error('suiFileUpload accepts "file" OR "files" at ' +
+						'configuration, it recived both');
 
 				config.files = { file: config.file };
 			}
