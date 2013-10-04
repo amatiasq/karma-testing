@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DEMO INDEX</title>
+		<script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+		<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+
+		<script type="text/javascript">
+
+			require.config({
+				baseUrl: '../src/',
+				urlArgs: Date.now(),
+
+				paths: {
+					'FileAPI': '../lib/FileAPI.min',
+				}
+			});
+
+			require([ 'file_upload' ], function() {
+
+				FileAPI.flashUrl = '../lib/FileAPI.flash.swf';
+
+				angular.module('file-upload-demo', [
+					'sui-file-upload'
+				])
+
+				.controller('DemoCtrl', function($scope, suiFileUpload) {
+
+					$scope.upload = function(files) {
+						console.log('UPLOADING');
+						console.log(JSON.stringify(files));
+
+						suiFileUpload({
+							url: '/upload.php',
+
+							//data: { foo: 'bar' }, // POST-data (iframe, flash, html5)
+							//headers: { }, // (html5)
+
+							files: {
+								testfile: files[0]
+							},
+							fileprogress: function (event) {   // (flash, html5)
+								var percent = event.loaded / event.total * 100;
+								console.log('FILE_PROGRESS', percent, event)
+							},
+							progress: function (event) {    // (flash, html5)
+								var percent = event.loaded / event.total * 100;
+								console.log('PROGRESS', percent, event);
+							},
+							complete: function (err, xhr) {
+								console.log('COMPLETED');
+								if (err) console.log('ERROR', err);
+								else console.log('SUCCESS', xhr);
+							}
+						});
+					};
+				});
+
+				angular.bootstrap(document.body, [ 'file-upload-demo' ]);
+
+			});
+
+		</script>
+	</head>
+	<body>
+		<div ng-controller="DemoCtrl">
+			<input type="file" sui-file-selector onfileselected="upload(files)">
+		</div>
+	</body>
+</html>

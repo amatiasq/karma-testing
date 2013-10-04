@@ -17,20 +17,15 @@ define(function(require) {
 
 			var complete = config.complete;
 			config.complete = function(err, xhr) {
-				if (err) return defer.reject(err);
-				defer.resolve(xhr);
+				if (err) {
+					defer.reject(err);
+				} else {
+					defer.resolve(xhr);
+				}
 
 				if (angular.isFunction(complete))
 					complete(err, xhr);
 			};
-
-			if (config.file) {
-				if (config.files)
-					throw new Error('suiFileUpload accepts "file" OR "files" at ' +
-						'configuration, it recived both');
-
-				config.files = { file: config.file };
-			}
 
 			FileAPI.upload(config)
 			return defer.promise;
