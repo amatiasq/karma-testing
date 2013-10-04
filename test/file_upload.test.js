@@ -36,23 +36,23 @@ define(function(require) {
 
 		describe('File Upload service', function() {
 
-			it('should invoke FileAPI library with the passed configuration', inject(function(suiFileUpload) {
+			it('should invoke FileAPI library with the passed configuration', inject(function(suiFile) {
 				var fakeConfig = {};
 				var mock = sinon.mock(FileAPI);
 				mock.expects('upload').once().withArgs(fakeConfig);
 
-				suiFileUpload(fakeConfig);
+				suiFile.upload(fakeConfig);
 
 				mock.verify();
 			}));
 
 			function testReturnedPromise(action) {
-				inject(function($rootScope, suiFileUpload) {
+				inject(function($rootScope, suiFile) {
 					var stub = sinon.stub(FileAPI, 'upload')
 					var spy = sinon.spy();
 					var value = {};
 
-					var promise = suiFileUpload({});
+					var promise = suiFile.upload({});
 					action(promise, stub, spy, value);
 
 					// This flushes promises chain so the resolved promises invokes it's callbacks
@@ -81,11 +81,11 @@ define(function(require) {
 				});
 			});
 
-			it('should propagate FileAPI\'s "progress" callback', inject(function(suiFileUpload) {
+			it('should propagate FileAPI\'s "progress" callback', inject(function(suiFile) {
 				var stub = sinon.stub(FileAPI, 'upload');
 				var spy = sinon.spy();
 
-				suiFileUpload({
+				suiFile.upload({
 					progress: spy
 				});
 

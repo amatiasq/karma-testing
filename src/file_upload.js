@@ -1,3 +1,7 @@
+// This library depends on FileAPI
+//   FileAPI doc: https://github.com/mailru/FileAPI
+
+
 define(function(require) {
 	require('FileAPI');
 
@@ -11,8 +15,8 @@ define(function(require) {
 				'"FileAPI.flashUrl" in order to use "sui-file-upload"');
 	})
 
-	.factory('suiFileUpload', function($q) {
-		return function uploadFile(config) {
+	.service('suiFile', function($q) {
+		this.upload = function uploadFile(config) {
 			var defer = $q.defer();
 
 			var complete = config.complete;
@@ -27,7 +31,7 @@ define(function(require) {
 					complete(err, xhr);
 			};
 
-			FileAPI.upload(config)
+			FileAPI.upload(config);
 			return defer.promise;
 		};
 	})

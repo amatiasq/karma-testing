@@ -25,13 +25,13 @@
 					'sui-file-upload'
 				])
 
-				.controller('DemoCtrl', function($scope, suiFileUpload) {
+				.controller('DemoCtrl', function($scope, suiFile) {
 
 					$scope.upload = function(files) {
 						console.log('UPLOADING');
 						console.log(JSON.stringify(files));
 
-						suiFileUpload({
+						suiFile.upload({
 							url: '/upload.php',
 
 							//data: { foo: 'bar' }, // POST-data (iframe, flash, html5)
