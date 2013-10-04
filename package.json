@@ -1,12 +1,15 @@
 {
   "name": "sui",
   "version": "0.0.1",
-
-  "dependencies" : { },
-
+  "dependencies": {},
   "devDependencies": {
-  	"bower": "latest",
-    "karma": "latest",
-    "karma-mocha": "latest"
+    "bower": "~1.2.7",
+    "mocha": "~1.13.0",
+    "karma": "~0.10.2",
+    "karma-mocha": "~0.1.0",
+    "grunt": "~0.4.1",
+    "grunt-karma": "~0.6.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

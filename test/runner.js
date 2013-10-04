@@ -20,11 +20,15 @@ requirejs.config({
 	}
 });
 
-angular.module('sui', []);
+(function() {
 
-requirejs([
-	'test/back.test',
-	'test/file_upload.test',
-], function() {
-	window.__karma__.start();
-});
+	var files = Object.keys(window.__karma__.files);
+
+	var deps = files.filter(function(filename) {
+		return filename.indexOf('.test.js') !== -1;
+	});
+
+	requirejs(deps, function() {
+		window.__karma__.start();
+	});
+})();

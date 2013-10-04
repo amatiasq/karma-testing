@@ -12,7 +12,7 @@ module.exports = function(config) {
 
 
 		// frameworks to use
-		frameworks: ['mocha', 'requirejs'],
+		frameworks: [ 'mocha', 'requirejs' ],
 
 
 		// list of files / patterns to load in the browser
@@ -36,7 +36,7 @@ module.exports = function(config) {
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['progress'],
+		reporters: [ 'progress' ],
 
 
 		// web server port
@@ -64,7 +64,11 @@ module.exports = function(config) {
 		// - Safari (only Mac)
 		// - PhantomJS
 		// - IE (only Windows)
-		browsers: ['Chrome','Firefox'],
+		browsers: [
+			'PhantomJS',
+			'Chrome',
+			//'Firefox'
+		],
 
 
 		// If browser does not capture in given timeout [ms], kill it

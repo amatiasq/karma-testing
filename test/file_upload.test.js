@@ -1,5 +1,8 @@
+/*globals FileAPI*/
+
 define(function(require) {
 	'use strict';
+
 	var assert = require('chai').assert;
 	var sinon = require('sinon');
 
@@ -13,7 +16,7 @@ define(function(require) {
 
 		beforeEach(module('sui-file-upload'));
 
-		describe('File Upload directive', function() {
+		describe('File Selector directive', function() {
 
 			it('should invoke onchange attr when changed', inject(function($compile, $rootScope) {
 				var fakeFiles = {};
@@ -26,7 +29,7 @@ define(function(require) {
 				var link = $compile('<input type="file" sui-file-selector onfileselected="cosa(files)"></input>');
 				var element = link($rootScope)[0];
 				var event = document.createEvent('HTMLEvents');
-    			event.initEvent('change', false, true);
+				event.initEvent('change', false, true);
 				element.dispatchEvent(event);
 
 				assert(listener.calledOnce, 'function was not invoked');
@@ -34,7 +37,7 @@ define(function(require) {
 			}));
 		});
 
-		describe('File Upload service', function() {
+		describe('File service', function() {
 
 			it('should invoke FileAPI library with the passed configuration', inject(function(suiFile) {
 				var fakeConfig = {};
@@ -48,7 +51,7 @@ define(function(require) {
 
 			function testReturnedPromise(action) {
 				inject(function($rootScope, suiFile) {
-					var stub = sinon.stub(FileAPI, 'upload')
+					var stub = sinon.stub(FileAPI, 'upload');
 					var spy = sinon.spy();
 					var value = {};
 

@@ -1,8 +1,10 @@
+/*globals FileAPI*/
 // This library depends on FileAPI
 //   FileAPI doc: https://github.com/mailru/FileAPI
 
 
 define(function(require) {
+	'use strict';
 	require('FileAPI');
 
 	// This module requires FileAPI.flashUrl to be defined
@@ -42,7 +44,7 @@ define(function(require) {
 				onfileselected: '&',
 			},
 
-			link: function(scope, iElement, iAttrs) {
+			link: function(scope, iElement) {
 				var element = iElement[0];
 
 				element.addEventListener('change', function(event) {

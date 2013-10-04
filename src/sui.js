@@ -8,5 +8,4 @@ define(function(require) {
 		'sui-back',
 		'sui-file-upload',
 	]);
-
 });
