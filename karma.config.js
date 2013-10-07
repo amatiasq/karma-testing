@@ -15,18 +15,15 @@ module.exports = function(config) {
 		frameworks: [ 'mocha', 'requirejs' ],
 
 
-		// list of files / patterns to load in the browser
 		files: [
+			'bower_components/angular/angular.js',
+			'lib/angular-mocks.js',
+			'src/test_runner.js',
 			{pattern: 'bower_components/chai/chai.js', included: false},
 			{pattern: 'lib/sinon-1.7.3.js', included: false},
 			{pattern: 'lib/FileAPI.min.js', included: false},
 			{pattern: 'src/**/*.js', included: false},
-			{pattern: 'test/**/*.test.js', included: false},
-			'bower_components/angular/angular.js',
-			'lib/angular-mocks.js',
-			'test/runner.js',
 		],
-
 
 		// list of files to exclude
 		exclude: [

@@ -5,16 +5,22 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		files: {
-			js: [ 'src/**/*.js' ],
-			test: [
-				'test/**/*.test.js',
-				'test/runner.js',
+			js: [
+				'src/**/*.js',
+				'!src/**/*.test.js',
+				'!src/test_runner.js',
 			],
-			html: [ 'demo/**/*.html' ],
+			test: [
+				'src/**/*.test.js',
+				'src/test_runner.js',
+			],
 			json: [
 				'jshintrc.json',
 				'bower.json',
 				'package.json',
+			],
+			html: [
+				'src/**/*.html'
 			],
 			config: [
 				'Gruntfile.js',

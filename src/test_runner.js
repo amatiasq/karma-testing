@@ -10,8 +10,6 @@ requirejs.config({
 	paths: {
 		'chai': '../bower_components/chai/chai',
 		'sinon': '../lib/sinon-1.7.3',
-		'test': '../test',
-
 		'FileAPI': '../lib/FileAPI.min',
 	},
 
@@ -27,6 +25,7 @@ requirejs.config({
 	var deps = files.filter(function(filename) {
 		return filename.indexOf('.test.js') !== -1;
 	});
+	console.log(deps);
 
 	requirejs(deps, function() {
 		window.__karma__.start();

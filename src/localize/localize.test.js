@@ -3,7 +3,7 @@ define(function(require) {
 	var assert = require('chai').assert;
 
 	// SUT
-	require('localize');
+	require('localize/localize');
 
 	describe('Location module', function() {
 		beforeEach(module('sui-location'));

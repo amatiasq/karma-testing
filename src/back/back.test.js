@@ -4,7 +4,7 @@ define(function(require) {
 	var sinon = require('sinon');
 
 	// SUT
-	require('back');
+	require('back/back');
 
 	describe('Back directive', function() {
 		beforeEach(module('sui-back'));

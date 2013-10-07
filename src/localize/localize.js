@@ -1,7 +1,7 @@
 define(function(require) {
 	'use strict';
 
-	var utils = require('utils');
+	var utils = require('utils/utils');
 
 	function resolveToken(localize, token) {
 		var values = token.split('|');

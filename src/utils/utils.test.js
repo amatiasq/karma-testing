@@ -1,7 +1,7 @@
 define(function(require) {
 	'use strict';
 	var sinon = require('sinon');
-	var utils = require('utils');
+	var utils = require('utils/utils');
 
 	describe('Deprecated utility', function() {
 

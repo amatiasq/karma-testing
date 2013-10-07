@@ -7,7 +7,7 @@ define(function(require) {
 	var sinon = require('sinon');
 
 	// SUT
-	require('file_upload');
+	require('file_upload/file_upload');
 
 	describe('File Upload module', function() {
 
