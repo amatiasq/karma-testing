@@ -22,7 +22,17 @@ define(function(require) {
 					assert.equal(localize.getLocalizedString('unit'), 'tdd');
 				}));
 
-				// TODO
+				it('should return the input string if it\'s not found on the dictionary', inject(function(localize) {
+					localize.addToDictionary([
+						{ key: 'test', value: 'testing' },
+						{ key: 'unit', value: 'tdd' },
+					]);
+					assert.equal(localize.getLocalizedString('blabla'), 'blabla');
+				}));
+
+				it('should return empty string if the dictionary has no data', inject(function(localize) {
+					assert.equal(localize.getLocalizedString('blabla'), '');
+				}));
 			});
 
 			// TODO

@@ -2,23 +2,21 @@
 // This library depends on FileAPI
 //   FileAPI doc: https://github.com/mailru/FileAPI
 
-
 define(function(require) {
 	'use strict';
 	require('FileAPI');
 
-	// This module requires FileAPI.flashUrl to be defined
-
 	return angular.module('sui-file-upload', [])
 
+	// This module requires FileAPI.flashUrl to be defined
 	.config(function() {
 		if (FileAPI.flashUrl === './FileAPI.flash.swf')
 			throw new Error('Please, provide the path to "FileAPI.flash.swf" at ' +
 				'"FileAPI.flashUrl" in order to use "sui-file-upload"');
 	})
 
-	.service('suiFile', function($q) {
-		this.upload = function uploadFile(config) {
+	.factory('suiFile', function($q) {
+		function upload(config) {
 			var defer = $q.defer();
 
 			var complete = config.complete;
@@ -35,6 +33,10 @@ define(function(require) {
 
 			FileAPI.upload(config);
 			return defer.promise;
+		}
+
+		return {
+			upload: upload
 		};
 	})
 

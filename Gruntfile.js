@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 			],
 		},
 
-		delta: {
+		watch: {
 			test: {
 				files: [
 					'<%= files.js %>',
@@ -37,13 +37,13 @@ module.exports = function(grunt) {
 				tasks: [
 					'jshint:src',
 					'jshint:test',
-					'karma:delta'
+					'karma:watch'
 				]
 			},
 		},
 
 		karma: {
-			delta: {
+			watch: {
 				configFile: 'karma.config.js',
 				browsers: [ 'PhantomJS' ],
 				runnerPort: 9101,
@@ -68,13 +68,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-karma');
 
 	// Default task(s).
-	grunt.renameTask( 'watch', 'delta' );
-	grunt.registerTask( 'watch', [
-		'jshint:src',
-		'jshint:test',
-		'karma:delta',
-		'delta'
-	] );
 	grunt.registerTask('default', [ 'watch' ]);
 
 };
